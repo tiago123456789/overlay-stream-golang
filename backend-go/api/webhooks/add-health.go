@@ -7,15 +7,11 @@ import (
 	"github.com/tiago123456789/overlay-stream-golang/src/utils/webhook"
 )
 
-var pushNotification *notification.PusherNotification
-
 func Handler(w http.ResponseWriter, r *http.Request) {
 	apiKey := r.Header.Get("api-key")
 	webhook.IsAuthorizated(apiKey, w)
 
-	if pushNotification == nil {
-		pushNotification = notification.New("my-channel")
-	}
+	pushNotification := notification.New("my-channel")
 
 	data := map[string]interface{}{}
 	_ = pushNotification.Emit("add-health", data)
