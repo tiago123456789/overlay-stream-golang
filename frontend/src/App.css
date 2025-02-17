@@ -1,0 +1,58 @@
+.hud {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.hud .health-bar,
+.hud .armor-bar {
+  width: 200px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid white;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.hud .health-bar-progress {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: green;
+}
+
+.hud .armor-bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: blue;
+}
+
+.hud .money {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00ff00;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.hud .weapon {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.hud .weapon img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
